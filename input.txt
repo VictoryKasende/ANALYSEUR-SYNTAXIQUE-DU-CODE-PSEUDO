@@ -1,0 +1,7 @@
+debut
+    entier nb := 43;
+    
+    structure Point
+        entier n;
+        reel b;
+fin
