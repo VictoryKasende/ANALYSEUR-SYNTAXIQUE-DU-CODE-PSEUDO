@@ -1,7 +1,47 @@
 debut
-    entier nb := 43;
-    
+    entier menu
+    caractere c
+    reel y
+    boolean etat
+    lire menu
+
+    suivant menu faire
+        cas ou 1
+            ecrire ("Menu enfants")
+
+        cas ou 2
+            ecrire ("Menu végétarien")
+
+        autres cas
+            ecrire ("Menu standard")
+
+
+    entier a
+    lire a
+
+    entier temp
+    temp := 43
+    ecrire (a)
+
+    entier n
+    n := 8
+
+    repeter
+        lire n
+    jusqu'a n = 0
+        ecrire(s)
+
+    entier n
+    tant que n = 0 faire
+        ecire ("Entrer un entier 0 pour arrêter : ")
+        lire n
+        ecrire ("la somme vaut: ", n)
+
+    pour i de 1 a n faire
+        s := 58
+        ecrire (s)
+
     structure Point
-        entier n;
-        reel b;
+        reel x
+        reel y
 fin

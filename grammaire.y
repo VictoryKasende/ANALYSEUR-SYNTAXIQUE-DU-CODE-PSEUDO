@@ -66,20 +66,20 @@ instruction: declaration
            | structure
            ;
 
-declaration: type ID ';'
-           | type ID AFFECTATION expression ';'
+declaration: type ID
+           | type ID AFFECTATION expression
            | type ID AFFECTATION appel_fonction
            ;
 
-affectation: ID AFFECTATION expression ';'
+affectation: ID AFFECTATION expression
             | ID AFFECTATION appel_fonction 
            ;
 
-lecture: LIRE '(' ID ')' ';'
+lecture: LIRE ID
         ;
 
-ecriture: ECRIRE '(' parametres_ecriture ')' ';'
-        | ECRIRE parametres_ecriture ';'
+ecriture: ECRIRE '(' parametres_ecriture ')'
+        | ECRIRE parametres_ecriture
         ;
 
 parametres_ecriture: guillemets | expression | parametres_ecriture ',' guillemets | parametres_ecriture ',' expression
@@ -100,7 +100,7 @@ conditionnelle: SI '(' condition ')' ALORS instructions SINON instructions FIN_S
 
 test_suivant_cas:SUIVANT expression FAIRE
                 | CAS ou expression instruction
-                | AUTRES CAS expression instruction
+                | AUTRES CAS instruction
                 ;
 
 boucle_pour: POUR ID DE expression ID expression FAIRE instruction
@@ -112,12 +112,12 @@ boucle_tant_que:TANT QUE condition FAIRE instruction
 boucle_repeter: REPETER instructions JUSQUA condition
               ;
 
-fonction: FONCTION type ID '(' parametres_fonction ')' instruction
-        | FONCTION type ID '(' parametres_fonction ')' instruction RETOURNE expression ';'
+fonction: type ID '(' parametres_fonction ')' instruction
+        | type ID '(' parametres_fonction ')' instruction RETOURNE expression
         ;
         
 
-appel_fonction: ID '(' arguments_fonction ')' ';'
+appel_fonction: ID '(' arguments_fonction ')'
               ;
 
 parametres_fonction: 
